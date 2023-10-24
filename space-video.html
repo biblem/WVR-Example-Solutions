@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A-Frame Video</title>
+    <meta name="description" content="A-Frame Table">
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+          <video id="spacevideo2" autoplay loop="true" src ="https://cdn.glitch.com/96c347b1-82d6-4afd-b775-87e7d5a557ab%2F4K_Space.mp4?v=1613587436553"></video>
+          <video id="spacevideo" autoplay loop="true" src ="https://cdn.glitch.com/96c347b1-82d6-4afd-b775-87e7d5a557ab%2FSpace%20Engine%20%5B360%20video%5D.mp4?v=1613591079717"></video>
+      </a-assets>
+
+      <a-videosphere src ="#spacevideo"></a-videosphere>
+      
+      <a-camera poition="0 0 0" look-controls-enabled="true" wasd-controls-enabled="false"></a-camera>
+      
+    </a-scene>
+  </body>
+</html>

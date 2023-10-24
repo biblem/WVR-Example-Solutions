@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>A-Frame Table</title>
+    <meta name="description" content="A-Frame Table">
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.1.1/dist/aframe-extras.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: rgb(169, 169, 169)">
+      <a-assets>
+         <img id="pool"   src="https://cdn.glitch.com/96c347b1-82d6-4afd-b775-87e7d5a557ab%2FPool-Tiles.jpg?v=1613583928633">
+         <img id="grass"  src="https://cdn.glitch.com/741678ce-1ba1-40b8-84c9-714a63af8efe%2FT_Ground_Forest_Moss_01_A.jpg?v=1605034871636">
+         <img id="floor"  src="https://cdn.glitch.com/96c347b1-82d6-4afd-b775-87e7d5a557ab%2FWhite-Tiles.jpg?v=1613583932294">
+         <img id="sky"    src="https://cdn.glitch.com/96c347b1-82d6-4afd-b775-87e7d5a557ab%2FDunes.jpg?v=1613583457550">
+         <audio id="rain" src="https://cdn.glitch.com/96c347b1-82d6-4afd-b775-87e7d5a557ab%2FHeavy%20Rain.mp3?v=1613593964910"></audio>
+         <audio id="birds" src="https://cdn.glitch.com/96c347b1-82d6-4afd-b775-87e7d5a557ab%2FNature%20Ambience.mp3?v=1613593962452"></audio>
+         <audio id="seaguls" src="https://cdn.glitch.com/96c347b1-82d6-4afd-b775-87e7d5a557ab%2FSeagulls.mp3?v=1613595044613"></audio>        
+      </a-assets>
+
+      <a-sky src="#sky"></a-sky>
+      
+      <a-entity position="0 2 20">
+           <a-camera fov="50"></a-camera>
+      </a-entity>
+            
+      <a-entity id="Pool">
+        <a-entity id="Becken">
+          <a-plane src="#pool" width="25" height="15" repeat="5 3" position="0 -4.5 0" rotation="-90 0 0"></a-plane>
+          <a-plane src="#pool" width="25" height="5" repeat="5 1" position="0 -2 -7.5"></a-plane>
+          <a-plane src="#pool" width="25" height="5" repeat="5 1" position="0 -2 7.5" rotation="0 180 0"></a-plane>
+          <a-plane src="#pool" width="15" height="5" repeat="3 1" position="-12.5 -2 0" rotation="0 90 0"></a-plane>
+          <a-plane src="#pool" width="15" height="5" repeat="3 1" position="12.5 -2 0" rotation="0 -90 0"></a-plane>
+
+     <!-- <a-ocean width="25" depth="15" density="10" color="#0040ae" position="0 0 0" opacity="0.9" speed="0.5" speedVariance="0.01" amplitude="0.04" amplitudeVariance="0.001">
+          </a-ocean> -->
+          
+          <a-entity ocean="width: 25; depth: 15; density: 6; color: #00209e; opacity: 0.8; speed: 0.9; speedVariance: 0.1; amplitude: 0.08; amplitudeVariance: 0.01;" position="0 -0.3 0" rotation="-90 0 0"></a-entity>          
+        </a-entity>
+        
+        <a-entity id="Beckenrand">
+          <a-plane src="#floor" width="30" height="2.5" repeat="12 1" position="0 0.5 -8.75" rotation="-90 0 0"></a-plane>
+          <a-plane src="#floor" width="2.5" height="15" repeat="1 6" position="-13.75 0.5 0" rotation="-90 0 0"></a-plane>
+          <a-plane src="#floor" width="30" height="2.5" repeat="12 1" position="0 0.5 8.75" rotation="-90 0 0"></a-plane>
+          <a-plane src="#floor" width="2.5" height="15" repeat="1 6" position="13.75 0.5 0" rotation="-90 0 0"></a-plane>                  
+        </a-entity>
+        
+        <a-entity id="Grass">
+          <a-plane src="#grass" width="500" height="500" repeat="100 100" position="0 0.5 -260" rotation="-90 0 0"></a-plane>
+          <a-plane src="#grass" width="500" height="500" repeat="100 100" position="0 0.5 260" rotation="-90 0 0"></a-plane>
+          <a-plane src="#grass" width="485" height="20" repeat="97 4" position="257.5 0.5 0" rotation="-90 0 0"></a-plane>
+          <a-plane src="#grass" width="485" height="20" repeat="97 4" position="-257.5 0.5 0" rotation="-90 0 0"></a-plane>
+        </a-entity>
+        
+      </a-entity>
+      
+      <a-entity position="0 0 0" sound="src: #rain; autoplay: true; loop: true; volume: 1; distanceModel: exponential; rolloffFactor: 2;"></a-entity>
+      
+      <a-entity position="-25 0 0" sound="src: #birds; autoplay: true; loop: true; volume: 1; distanceModel: exponential; rolloffFactor: 1.5;"></a-entity>
+
+      <a-entity position="25 0 0" sound="src: #seaguls; autoplay: true; loop: true; volume: 1; distanceModel: exponential; rolloffFactor: 2;"></a-entity>
+      
+    </a-scene>
+  </body>
+</html>
+
+ 

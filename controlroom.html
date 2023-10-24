@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> </title>
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+  </head>
+
+  <style></style>
+  <body>
+    <a-scene background="color: #ECECEC">
+      <a-assets>
+
+        <img
+          id="sky"
+          src="https://cdn.glitch.me/96c347b1-82d6-4afd-b775-87e7d5a557ab%2FSciFi.jpg?v=1638648126010"
+        />
+        <img
+          id="platte"
+          src="https://cdn.glitch.me/96c347b1-82d6-4afd-b775-87e7d5a557ab%2Fdeskplate.jpg?v=1638647917779"
+        />
+        <img
+          id="silverMetal"
+          src="https://cdn.glitch.me/96c347b1-82d6-4afd-b775-87e7d5a557ab%2Fsilvermetal.jpg?v=1638647918363"
+        />
+        <img
+          id="blackPlastic"
+          src="https://cdn.glitch.me/96c347b1-82d6-4afd-b775-87e7d5a557ab%2Fblackplastic.jpg?v=1638648263837"
+        />
+        <img
+          id="blackLeather"
+          src="https://cdn.glitch.me/96c347b1-82d6-4afd-b775-87e7d5a557ab%2Fblack-leather.jpg?v=1638647923865"
+        />
+        <img id="boden" src="https://cdn.glitch.me/96c347b1-82d6-4afd-b775-87e7d5a557ab%2FLaminat.jpg?v=1638647917704"/>
+        
+        <a-mixin id="tischBein" geometry="primitive: cylinder; radius: 0.05; height: 0.7" material="color: #2F4F4F; src: #silverMetal"></a-mixin>
+      </a-assets>
+
+      <a-sky src="#sky"></a-sky>
+      
+      <a-entity id="rig" position="3 1.5 0">
+              <a-camera></a-camera>
+      </a-entity>
+
+      <a-plane
+        src="#boden"
+        rotation="-90 0 0"
+        color="dimgray"
+        height="10"
+        width="10"
+        material="repeat: 10 10"
+      ></a-plane>
+      <a-entity position="1 0 1">
+        <a-entity position="0.796 0.34201 0.799" mixin="tischBein" geometry="" material=""></a-entity>
+        <a-entity position="-0.831 0.34201 0.799" mixin="tischBein" geometry="" material=""></a-entity>
+        <a-entity position="0.796 0.34201 -0.813" mixin="tischBein" geometry="" material=""></a-entity>
+        <a-entity position="-0.844 0.34201 -0.82" mixin="tischBein" geometry="" material=""></a-entity>
+        <a-box src="#platte" geometry="depth: 2; height: 0.05; width: 2" position="0 0.68493 0" material="" color="#862A16"></a-box>
+      </a-entity>
+      <a-entity position="-0.15727 0 0.93871">
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 36 0" position="0.344 0.03 -0.245"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 -36 0" position="0.344 0.03 0.255"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 108 0" position="-0.136 0.03 -0.395"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 0 0" position="-0.426 0.03 0.005"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 -108 0" position="-0.136 0.03 0.405"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.05; radius: 0.1" rotation="" position="0 0.07149 0"></a-cylinder>
+        <a-cylinder color="black" src="#silverMetal" material="" geometry="height: 0.15; radius: 0.03" rotation="" position="0 0.169 0"></a-cylinder>
+        <a-entity>
+          <a-cylinder color="black" src="#silverMetal" material="" geometry="height: 0.2; radius: 0.025" rotation="" position="0 0.20683 0"></a-cylinder>
+          <a-box src="#blackLeather" material="" geometry="depth: 0.37; height: 0.05; width: 0.37" position="0 0.3217 0"></a-box>
+          <a-box src="#blackLeather" material="" geometry="height: 0.05; depth: 0.37; width: 0.5" rotation="0 0 100" position="-0.292 0.62793 0"></a-box>
+          <a-box src="#blackPlastic" material="" geometry="height: 0.05; depth: 0.07; width: 0.5" position="-0.055 0.50133 0.232"></a-box>
+          <a-box src="#blackPlastic" material="" geometry="height: 0.05; depth: 0.07; width: 0.5" position="-0.055 0.501 -0.232"></a-box>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="22 0 -22" position="0.085 0.3931 0.211"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="22 0 22" position="-0.091 0.393 0.211"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="-22 0 -22" position="0.085 0.393 -0.21"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="-22 0 22" position="-0.091 0.393 -0.21"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.15; radius: 0.01" rotation="0 0 40" position="-0.224 0.366 -0.097"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.15; radius: 0.01" rotation="0 0 40" position="-0.224 0.3656 0.093"></a-cylinder>
+          <a-cylinder src="#blackPlastic" material="" geometry="height: 0.02; radius: 0.025" rotation="90 0 0" position="-0.272 0.4991 -0.196"></a-cylinder>
+          <a-cylinder src="#blackPlastic" material="" geometry="height: 0.02; radius: 0.025" rotation="90 0 0" position="-0.272 0.499 0.194"></a-cylinder>
+        </a-entity>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 108 0" position="-0.085 0.07 -0.236"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="" position="-0.262 0.07 0"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 -108 0" position="-0.083 0.07 0.246"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 36 0" position="0.204 0.07 -0.145"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 -36 0" position="0.204 0.07 0.155"></a-box>
+      </a-entity>
+      
+      <a-entity position="0.9849 0 1.93488" rotation="0 90 0">
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 36 0" position="0.344 0.03 -0.245"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 -36 0" position="0.344 0.03 0.255"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 108 0" position="-0.136 0.03 -0.395"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 0 0" position="-0.426 0.03 0.005"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 -108 0" position="-0.136 0.03 0.405"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.05; radius: 0.1" rotation="" position="0 0.07149 0"></a-cylinder>
+        <a-cylinder color="black" src="#silverMetal" material="" geometry="height: 0.15; radius: 0.03" rotation="" position="0 0.169 0"></a-cylinder>
+        <a-entity position="">
+          <a-cylinder color="black" src="#silverMetal" material="" geometry="height: 0.2; radius: 0.025" rotation="" position="0 0.20683 0"></a-cylinder>
+          <a-box src="#blackLeather" material="" geometry="depth: 0.37; height: 0.05; width: 0.37" position="0 0.3217 0"></a-box>
+          <a-box src="#blackLeather" material="" geometry="height: 0.05; depth: 0.37; width: 0.5" rotation="0 0 100" position="-0.292 0.62793 0"></a-box>
+          <a-box src="#blackPlastic" material="" geometry="height: 0.05; depth: 0.07; width: 0.5" position="-0.055 0.50133 0.232"></a-box>
+          <a-box src="#blackPlastic" material="" geometry="height: 0.05; depth: 0.07; width: 0.5" position="-0.055 0.501 -0.232"></a-box>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="22 0 -22" position="0.085 0.3931 0.211"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="22 0 22" position="-0.091 0.393 0.211"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="-22 0 -22" position="0.085 0.393 -0.21"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="-22 0 22" position="-0.091 0.393 -0.21"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.15; radius: 0.01" rotation="0 0 40" position="-0.224 0.366 -0.097"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.15; radius: 0.01" rotation="0 0 40" position="-0.224 0.3656 0.093"></a-cylinder>
+          <a-cylinder src="#blackPlastic" material="" geometry="height: 0.02; radius: 0.025" rotation="90 0 0" position="-0.272 0.4991 -0.196"></a-cylinder>
+          <a-cylinder src="#blackPlastic" material="" geometry="height: 0.02; radius: 0.025" rotation="90 0 0" position="-0.272 0.499 0.194"></a-cylinder>
+        </a-entity>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 108 0" position="-0.085 0.07 -0.236"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="" position="-0.262 0.07 0"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 -108 0" position="-0.083 0.07 0.246"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 36 0" position="0.204 0.07 -0.145"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 -36 0" position="0.204 0.07 0.155"></a-box>
+      </a-entity>
+      
+      <a-entity position="2.01267 0 0.94203" rotation="0 180 0">
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 36 0" position="0.344 0.03 -0.245"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 -36 0" position="0.344 0.03 0.255"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 108 0" position="-0.136 0.03 -0.395"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 0 0" position="-0.426 0.03 0.005"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 -108 0" position="-0.136 0.03 0.405"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.05; radius: 0.1" rotation="" position="0 0.07149 0"></a-cylinder>
+        <a-cylinder color="black" src="#silverMetal" material="" geometry="height: 0.15; radius: 0.03" rotation="" position="0 0.169 0"></a-cylinder>
+        <a-entity>
+          <a-cylinder color="black" src="#silverMetal" material="" geometry="height: 0.2; radius: 0.025" rotation="" position="0 0.20683 0"></a-cylinder>
+          <a-box src="#blackLeather" material="" geometry="depth: 0.37; height: 0.05; width: 0.37" position="0 0.3217 0"></a-box>
+          <a-box src="#blackLeather" material="" geometry="height: 0.05; depth: 0.37; width: 0.5" rotation="0 0 100" position="-0.292 0.62793 0"></a-box>
+          <a-box src="#blackPlastic" material="" geometry="height: 0.05; depth: 0.07; width: 0.5" position="-0.055 0.50133 0.232"></a-box>
+          <a-box src="#blackPlastic" material="" geometry="height: 0.05; depth: 0.07; width: 0.5" position="-0.055 0.501 -0.232"></a-box>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="22 0 -22" position="0.085 0.3931 0.211"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="22 0 22" position="-0.091 0.393 0.211"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="-22 0 -22" position="0.085 0.393 -0.21"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="-22 0 22" position="-0.091 0.393 -0.21"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.15; radius: 0.01" rotation="0 0 40" position="-0.224 0.366 -0.097"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.15; radius: 0.01" rotation="0 0 40" position="-0.224 0.3656 0.093"></a-cylinder>
+          <a-cylinder src="#blackPlastic" material="" geometry="height: 0.02; radius: 0.025" rotation="90 0 0" position="-0.272 0.4991 -0.196"></a-cylinder>
+          <a-cylinder src="#blackPlastic" material="" geometry="height: 0.02; radius: 0.025" rotation="90 0 0" position="-0.272 0.499 0.194"></a-cylinder>
+        </a-entity>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 108 0" position="-0.085 0.07 -0.236"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="" position="-0.262 0.07 0"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 -108 0" position="-0.083 0.07 0.246"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 36 0" position="0.204 0.07 -0.145"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 -36 0" position="0.204 0.07 0.155"></a-box>
+      </a-entity>
+      
+      <a-entity position="0.92908 0 -0.17" rotation="0 -90 0">
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 36 0" position="0.344 0.03 -0.245"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 -36 0" position="0.344 0.03 0.255"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 108 0" position="-0.136 0.03 -0.395"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 0 0" position="-0.426 0.03 0.005"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.04; radius: 0.03" rotation="90 -108 0" position="-0.136 0.03 0.405"></a-cylinder>
+        <a-cylinder src="#blackPlastic" material="" geometry="height: 0.05; radius: 0.1" rotation="" position="0 0.07149 0"></a-cylinder>
+        <a-cylinder color="black" src="#silverMetal" material="" geometry="height: 0.15; radius: 0.03" rotation="" position="0 0.169 0"></a-cylinder>
+        <a-entity>
+          <a-cylinder color="black" src="#silverMetal" material="" geometry="height: 0.2; radius: 0.025" rotation="" position="0 0.20683 0"></a-cylinder>
+          <a-box src="#blackLeather" material="" geometry="depth: 0.37; height: 0.05; width: 0.37" position="0 0.3217 0"></a-box>
+          <a-box src="#blackLeather" material="" geometry="height: 0.05; depth: 0.37; width: 0.5" rotation="0 0 100" position="-0.292 0.62793 0"></a-box>
+          <a-box src="#blackPlastic" material="" geometry="height: 0.05; depth: 0.07; width: 0.5" position="-0.055 0.50133 0.232"></a-box>
+          <a-box src="#blackPlastic" material="" geometry="height: 0.05; depth: 0.07; width: 0.5" position="-0.055 0.501 -0.232"></a-box>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="22 0 -22" position="0.085 0.3931 0.211"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="22 0 22" position="-0.091 0.393 0.211"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="-22 0 -22" position="0.085 0.393 -0.21"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.21; radius: 0.01" rotation="-22 0 22" position="-0.091 0.393 -0.21"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.15; radius: 0.01" rotation="0 0 40" position="-0.224 0.366 -0.097"></a-cylinder>
+          <a-cylinder src="#silverMetal" color="#ABABAB" material="" geometry="height: 0.15; radius: 0.01" rotation="0 0 40" position="-0.224 0.3656 0.093"></a-cylinder>
+          <a-cylinder src="#blackPlastic" material="" geometry="height: 0.02; radius: 0.025" rotation="90 0 0" position="-0.272 0.4991 -0.196"></a-cylinder>
+          <a-cylinder src="#blackPlastic" material="" geometry="height: 0.02; radius: 0.025" rotation="90 0 0" position="-0.272 0.499 0.194"></a-cylinder>
+        </a-entity>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 108 0" position="-0.085 0.07 -0.236"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="" position="-0.262 0.07 0"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 -108 0" position="-0.083 0.07 0.246"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 36 0" position="0.204 0.07 -0.145"></a-box>
+        <a-box src="#blackPlastic" material="" geometry="depth: 0.05; height: 0.03; width: 0.4" rotation="0 -36 0" position="0.204 0.07 0.155"></a-box>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
