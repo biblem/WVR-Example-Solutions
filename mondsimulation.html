@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Weltraum</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-timeline-component@1.6.0/dist/aframe-animation-timeline-component.min.js"></script>
+    <script src="https://unpkg.com/aframe-text-geometry-component@0.5.1/dist/aframe-text-geometry-component.min.js"></script>
+  </head>
+
+  <body>
+    <a-scene animation-timeline="timeline: #anims;">
+      <a-assets>
+        <a-asset-item id="Star" src="https://cdn.glitch.com/2c87bc73-2231-49f5-a074-541a0dec033e%2FStar%20Jedi_Regular.json?v=1610560517123"></a-asset-item>
+        <img id="weltraum" src="https://cdn.glitch.com/2c87bc73-2231-49f5-a074-541a0dec033e%2Fnottingham-university-forscher-wissenschaftler-alien-ausserirdische-zivilisation-weltall-milchstrasse.jpg?v=1606903987290" />
+        <img id="erde" src="https://cdn.glitch.com/741678ce-1ba1-40b8-84c9-714a63af8efe%2Fearth.jpg?v=1606932665775" />
+        <img id="mond" src="https://cdn.glitch.com/2c87bc73-2231-49f5-a074-541a0dec033e%2FDownload.jpg?v=1607506200889" />
+      </a-assets>
+      
+      <a-sky src="#weltraum"></a-sky>
+      
+      <a-timeline id="anims">
+        <a-timeline-animation select="#text" name="pos"></a-timeline-animation>
+        <a-timeline-animation select="#startext" name="pos"></a-timeline-animation>
+      </a-timeline>
+
+      <a-camera position="0 0 65"></a-camera>
+      <!-- animation="property: position; from: 0 0 500; to: 0 0 15; dur: 10000" -->
+
+      
+      <a-entity rotation="0 0 65">
+          <a-sphere position="0 0 0" src="#erde" scale="1.5 1.5 1.5"
+            animation="property: rotation; from: 0 0 0; to:0 6371 4500; dur: 2000000; loop: true; easing: linear;"
+          ></a-sphere>
+                
+          <a-entity position="0 0 0" 
+                  animation="property: rotation; from: 0 0 0; to:100 7200 0; dur: 30000000; loop: true; easing: linear;">
+          
+               <a-sphere position="10 3 0" src="#mond" scale="0.375 0.375 0.375"
+                      animation="property: rotation; from: 0 0 0; to: 0 0 0; dur: 2000000; loop: NaN; easing: linear">
+               </a-sphere>
+          </a-entity>
+      </a-entity>
+      
+
+
+     
+      <a-entity>
+        <a-text
+          id="text"
+          value="Es herrscht Aufruhr im Galaktischen Senat. Mehrere tausend Sonnensysteme haben ihre Absicht erklärt, aus der Republik auszutreten.
+
+          Diese Separatisten, unter der Führung des mysteriösen Count Dooku, machen es der kleinen Gruppe von Jedi-Rittern schwer, Frieden und Ordnung in der Galaxis aufrecht zu erhalten.
+
+          Senatorin Amidala, ehemals Königin von Naboo, kehrt in den Galaktischen Senat zurück, um an einer Abstimmung teilzunehmen, die über die umstrittene Aufstellung einer ARMEE DER REPUBLIK zur Unterstützung der unterlegenen Jedi entscheiden soll...."
+          color="#d5bc1a"
+          position="-3 -5 13"
+          rotation="-55 0 0"
+          width="10"
+          font="dejavu"
+          animation__pos="from: -3 -5 13; property: position; to: -3 10 13; dur: 10000; autoplay: false"
+        >
+        </a-text>
+      </a-entity>
+    
+
+
+      <a-entity
+        id="startext"
+        text-geometry="value: STAR WARS; font: https://cdn.glitch.com/2c87bc73-2231-49f5-a074-541a0dec033e%2FStar%20Jedi_Regular.json?v=1610560517123; height: 0.08; size: 3; weight: bold"
+        position="-10 0 50"
+        animation__pos="property: position; from: -10 0 50; to: -10 0 10; dur: 8000; autoplay: false;"
+        material="color: #d5bc1a"
+      >
+      </a-entity>
+      
+      
+    </a-scene>
+  </body>
+</html>
